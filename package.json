@@ -1,0 +1,15 @@
+{
+  "name": "node-starter",
+  "version": "0.0.0",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "run:wordpress-server": "node ./node_modules/adamziel-wordpress-wasm-test/index.mjs --mount ./:wp-content/mu-plugins --initialUrl='/wp-admin/admin.php?page=my-plugin'",
+    "run:plugin-compile": "wp-scripts start my-plugin/src/index.js --output-path=my-plugin/dist",
+    "start": "npm-run-all --parallel run:*"
+  },
+  "dependencies": {
+    "@wordpress/scripts": "^24.0.0",
+    "adamziel-wordpress-wasm-test": "^0.0.18",
+    "npm-run-all": "^4.1.5"
+  }
+}
